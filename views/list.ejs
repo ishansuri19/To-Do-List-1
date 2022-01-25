@@ -1,0 +1,25 @@
+<%- include('header'); -%>
+
+
+        <div class="box" id="heading">
+            <h1> <%= listTitle %></h1>
+        </div>
+        <div class="box">
+            <ul>
+                <%  for(var i=0 ; i<newListItems.length ; i++){ %>
+                    <div class="item">
+                        <input type="checkbox">
+                        <p> <%= newListItems[i] %> </p>
+                    </div>  
+                 <% } %>
+      
+              </ul>
+              <form class="item" action="/" method="post">   <!--post the information inside the form to server -->
+                <input type="text" name="newItem" placeholder="New Item" autocomplete="off" autocapitalize="words">
+                <button type="submit" name="list" value=<%= listTitle %>>+</button> <!--cannot post error as cannot post to home route-->
+                </form> 
+        </div>
+       
+<%- include('footer'); -%>
+        
+  
